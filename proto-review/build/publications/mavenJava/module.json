@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.fabriciolfj",
+    "module": "protoreview",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "protoreview-1.0.jar",
+          "url": "protoreview-1.0.jar",
+          "size": 32670,
+          "sha512": "c917b93e2b3c85f3f6b60fc1d0cecdbd5b1fe977100e1e692edd78452fb3b8eacbe137dbfdce890390b00de8f249d0798e3a8c63d015954aaf13f10a7bd4af96",
+          "sha256": "e1b9369456dfe11f36367dc7e0e541c34ec2e57f43885480a1634dfed3683181",
+          "sha1": "16a56dd8b24a8c28fd7f9f30e49db756a081ed77",
+          "md5": "3c6c9d92b6cd8aa768980e2c56108398"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.grpc",
+          "module": "grpc-protobuf",
+          "version": {
+            "requires": "1.49.2"
+          }
+        },
+        {
+          "group": "io.grpc",
+          "module": "grpc-stub",
+          "version": {
+            "requires": "1.49.2"
+          }
+        },
+        {
+          "group": "javax.annotation",
+          "module": "javax.annotation-api",
+          "version": {
+            "requires": "1.3.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "protoreview-1.0.jar",
+          "url": "protoreview-1.0.jar",
+          "size": 32670,
+          "sha512": "c917b93e2b3c85f3f6b60fc1d0cecdbd5b1fe977100e1e692edd78452fb3b8eacbe137dbfdce890390b00de8f249d0798e3a8c63d015954aaf13f10a7bd4af96",
+          "sha256": "e1b9369456dfe11f36367dc7e0e541c34ec2e57f43885480a1634dfed3683181",
+          "sha1": "16a56dd8b24a8c28fd7f9f30e49db756a081ed77",
+          "md5": "3c6c9d92b6cd8aa768980e2c56108398"
+        }
+      ]
+    }
+  ]
+}
