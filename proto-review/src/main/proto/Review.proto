@@ -9,11 +9,12 @@ message ProductReviewRequest {
 }
 
 message ProductReviewResponse {
-  string message = 1;
-  int64 rate = 2;
-  string date = 3;
+  string code = 1;
+  string message = 2;
+  int32 rate = 3;
+  string date = 4;
 }
 
 service ProductReviewService {
-  rpc find(ProductReviewRequest) returns (ProductReviewResponse);
+  rpc find(ProductReviewRequest) returns (stream ProductReviewResponse);
 }

@@ -27,11 +27,11 @@
         {
           "name": "protoreview-1.0.jar",
           "url": "protoreview-1.0.jar",
-          "size": 32670,
-          "sha512": "c917b93e2b3c85f3f6b60fc1d0cecdbd5b1fe977100e1e692edd78452fb3b8eacbe137dbfdce890390b00de8f249d0798e3a8c63d015954aaf13f10a7bd4af96",
-          "sha256": "e1b9369456dfe11f36367dc7e0e541c34ec2e57f43885480a1634dfed3683181",
-          "sha1": "16a56dd8b24a8c28fd7f9f30e49db756a081ed77",
-          "md5": "3c6c9d92b6cd8aa768980e2c56108398"
+          "size": 33430,
+          "sha512": "6d6ac4779b514ea24b184cb8ffd097f7e4d38e37f1b6d1ca3ac75b34a49c8e5511f7a224d4fddad6ee243ca85fd4cc243dc8970d45c58b922f1a8d0f736cb960",
+          "sha256": "abda46715e33e2e5bc6527f9155b7ace4d29d48e04adac424a10802ddb514cc5",
+          "sha1": "45ff576d9a6521c53fbd0602a84793198284164e",
+          "md5": "315d6393ec61335668701255596d44a7"
         }
       ]
     },
@@ -71,11 +71,11 @@
         {
           "name": "protoreview-1.0.jar",
           "url": "protoreview-1.0.jar",
-          "size": 32670,
-          "sha512": "c917b93e2b3c85f3f6b60fc1d0cecdbd5b1fe977100e1e692edd78452fb3b8eacbe137dbfdce890390b00de8f249d0798e3a8c63d015954aaf13f10a7bd4af96",
-          "sha256": "e1b9369456dfe11f36367dc7e0e541c34ec2e57f43885480a1634dfed3683181",
-          "sha1": "16a56dd8b24a8c28fd7f9f30e49db756a081ed77",
-          "md5": "3c6c9d92b6cd8aa768980e2c56108398"
+          "size": 33430,
+          "sha512": "6d6ac4779b514ea24b184cb8ffd097f7e4d38e37f1b6d1ca3ac75b34a49c8e5511f7a224d4fddad6ee243ca85fd4cc243dc8970d45c58b922f1a8d0f736cb960",
+          "sha256": "abda46715e33e2e5bc6527f9155b7ace4d29d48e04adac424a10802ddb514cc5",
+          "sha1": "45ff576d9a6521c53fbd0602a84793198284164e",
+          "md5": "315d6393ec61335668701255596d44a7"
         }
       ]
     }

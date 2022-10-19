@@ -22,7 +22,7 @@ public final class ProductReviewServiceGrpc {
       fullMethodName = SERVICE_NAME + '/' + "find",
       requestType = com.github.fabriciolfj.proto.ProductReviewRequest.class,
       responseType = com.github.fabriciolfj.proto.ProductReviewResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<com.github.fabriciolfj.proto.ProductReviewRequest,
       com.github.fabriciolfj.proto.ProductReviewResponse> getFindMethod() {
     io.grpc.MethodDescriptor<com.github.fabriciolfj.proto.ProductReviewRequest, com.github.fabriciolfj.proto.ProductReviewResponse> getFindMethod;
@@ -31,7 +31,7 @@ public final class ProductReviewServiceGrpc {
         if ((getFindMethod = ProductReviewServiceGrpc.getFindMethod) == null) {
           ProductReviewServiceGrpc.getFindMethod = getFindMethod =
               io.grpc.MethodDescriptor.<com.github.fabriciolfj.proto.ProductReviewRequest, com.github.fabriciolfj.proto.ProductReviewResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "find"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
@@ -105,7 +105,7 @@ public final class ProductReviewServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getFindMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 com.github.fabriciolfj.proto.ProductReviewRequest,
                 com.github.fabriciolfj.proto.ProductReviewResponse>(
@@ -132,7 +132,7 @@ public final class ProductReviewServiceGrpc {
      */
     public void find(com.github.fabriciolfj.proto.ProductReviewRequest request,
         io.grpc.stub.StreamObserver<com.github.fabriciolfj.proto.ProductReviewResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getFindMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -153,8 +153,9 @@ public final class ProductReviewServiceGrpc {
 
     /**
      */
-    public com.github.fabriciolfj.proto.ProductReviewResponse find(com.github.fabriciolfj.proto.ProductReviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public java.util.Iterator<com.github.fabriciolfj.proto.ProductReviewResponse> find(
+        com.github.fabriciolfj.proto.ProductReviewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getFindMethod(), getCallOptions(), request);
     }
   }
@@ -171,14 +172,6 @@ public final class ProductReviewServiceGrpc {
     protected ProductReviewServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new ProductReviewServiceFutureStub(channel, callOptions);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.github.fabriciolfj.proto.ProductReviewResponse> find(
-        com.github.fabriciolfj.proto.ProductReviewRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getFindMethod(), getCallOptions()), request);
     }
   }
 

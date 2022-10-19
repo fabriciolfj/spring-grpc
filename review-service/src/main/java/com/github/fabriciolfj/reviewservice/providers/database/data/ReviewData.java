@@ -27,5 +27,6 @@ public class ReviewData {
     @Column(name = "dateCreated", columnDefinition = "TIMESTAMP", nullable = false)
     @CreatedDate
     private LocalDateTime dateCreated;
+    private Integer rate;
 
 }

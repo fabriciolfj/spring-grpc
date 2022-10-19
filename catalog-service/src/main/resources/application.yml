@@ -1,18 +1,18 @@
 grp:
   server:
-    port: 5000
+    port: 5001
     host: localhost
 
 spring:
   application:
-    name: catalog-servier
+    name: catalog-service
   datasource:
-    url: jdbc:postgresq://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/postgres
     username: root
     password: root
     hikari:
       maximum-pool-size: 40
-      connection-timeout: 200
+      connection-timeout: 2000
   flyway:
     locations:
       - db/migration

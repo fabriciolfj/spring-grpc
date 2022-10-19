@@ -8,26 +8,44 @@ public interface ProductReviewResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string message = 1;</code>
+   * <code>string code = 1;</code>
+   * @return The code.
+   */
+  java.lang.String getCode();
+  /**
+   * <code>string code = 1;</code>
+   * @return The bytes for code.
+   */
+  com.google.protobuf.ByteString
+      getCodeBytes();
+
+  /**
+   * <code>string message = 2;</code>
    * @return The message.
    */
   java.lang.String getMessage();
   /**
-   * <code>string message = 1;</code>
+   * <code>string message = 2;</code>
    * @return The bytes for message.
    */
   com.google.protobuf.ByteString
       getMessageBytes();
 
   /**
-   * <code>string evaluation = 2;</code>
-   * @return The evaluation.
+   * <code>int32 rate = 3;</code>
+   * @return The rate.
    */
-  java.lang.String getEvaluation();
+  int getRate();
+
   /**
-   * <code>string evaluation = 2;</code>
-   * @return The bytes for evaluation.
+   * <code>string date = 4;</code>
+   * @return The date.
+   */
+  java.lang.String getDate();
+  /**
+   * <code>string date = 4;</code>
+   * @return The bytes for date.
    */
   com.google.protobuf.ByteString
-      getEvaluationBytes();
+      getDateBytes();
 }

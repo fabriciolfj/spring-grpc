@@ -16,8 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ProductReviewResponse() {
+    code_ = "";
     message_ = "";
-    evaluation_ = "";
+    date_ = "";
   }
 
   @java.lang.Override
@@ -45,10 +46,48 @@ private static final long serialVersionUID = 0L;
             com.github.fabriciolfj.proto.ProductReviewResponse.class, com.github.fabriciolfj.proto.ProductReviewResponse.Builder.class);
   }
 
-  public static final int MESSAGE_FIELD_NUMBER = 1;
+  public static final int CODE_FIELD_NUMBER = 1;
+  private volatile java.lang.Object code_;
+  /**
+   * <code>string code = 1;</code>
+   * @return The code.
+   */
+  @java.lang.Override
+  public java.lang.String getCode() {
+    java.lang.Object ref = code_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      code_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string code = 1;</code>
+   * @return The bytes for code.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCodeBytes() {
+    java.lang.Object ref = code_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      code_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MESSAGE_FIELD_NUMBER = 2;
   private volatile java.lang.Object message_;
   /**
-   * <code>string message = 1;</code>
+   * <code>string message = 2;</code>
    * @return The message.
    */
   @java.lang.Override
@@ -65,7 +104,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string message = 1;</code>
+   * <code>string message = 2;</code>
    * @return The bytes for message.
    */
   @java.lang.Override
@@ -83,38 +122,49 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int EVALUATION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object evaluation_;
+  public static final int RATE_FIELD_NUMBER = 3;
+  private int rate_;
   /**
-   * <code>string evaluation = 2;</code>
-   * @return The evaluation.
+   * <code>int32 rate = 3;</code>
+   * @return The rate.
    */
   @java.lang.Override
-  public java.lang.String getEvaluation() {
-    java.lang.Object ref = evaluation_;
+  public int getRate() {
+    return rate_;
+  }
+
+  public static final int DATE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object date_;
+  /**
+   * <code>string date = 4;</code>
+   * @return The date.
+   */
+  @java.lang.Override
+  public java.lang.String getDate() {
+    java.lang.Object ref = date_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      evaluation_ = s;
+      date_ = s;
       return s;
     }
   }
   /**
-   * <code>string evaluation = 2;</code>
-   * @return The bytes for evaluation.
+   * <code>string date = 4;</code>
+   * @return The bytes for date.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getEvaluationBytes() {
-    java.lang.Object ref = evaluation_;
+      getDateBytes() {
+    java.lang.Object ref = date_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      evaluation_ = b;
+      date_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -135,11 +185,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(evaluation_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, evaluation_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+    }
+    if (rate_ != 0) {
+      output.writeInt32(3, rate_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(date_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, date_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -150,11 +206,18 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(evaluation_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, evaluation_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+    }
+    if (rate_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, rate_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(date_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, date_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -171,10 +234,14 @@ private static final long serialVersionUID = 0L;
     }
     com.github.fabriciolfj.proto.ProductReviewResponse other = (com.github.fabriciolfj.proto.ProductReviewResponse) obj;
 
+    if (!getCode()
+        .equals(other.getCode())) return false;
     if (!getMessage()
         .equals(other.getMessage())) return false;
-    if (!getEvaluation()
-        .equals(other.getEvaluation())) return false;
+    if (getRate()
+        != other.getRate()) return false;
+    if (!getDate()
+        .equals(other.getDate())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -186,10 +253,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getCode().hashCode();
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
-    hash = (37 * hash) + EVALUATION_FIELD_NUMBER;
-    hash = (53 * hash) + getEvaluation().hashCode();
+    hash = (37 * hash) + RATE_FIELD_NUMBER;
+    hash = (53 * hash) + getRate();
+    hash = (37 * hash) + DATE_FIELD_NUMBER;
+    hash = (53 * hash) + getDate().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -318,9 +389,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      code_ = "";
+
       message_ = "";
 
-      evaluation_ = "";
+      rate_ = 0;
+
+      date_ = "";
 
       return this;
     }
@@ -348,8 +423,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.github.fabriciolfj.proto.ProductReviewResponse buildPartial() {
       com.github.fabriciolfj.proto.ProductReviewResponse result = new com.github.fabriciolfj.proto.ProductReviewResponse(this);
+      result.code_ = code_;
       result.message_ = message_;
-      result.evaluation_ = evaluation_;
+      result.rate_ = rate_;
+      result.date_ = date_;
       onBuilt();
       return result;
     }
@@ -398,12 +475,19 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.github.fabriciolfj.proto.ProductReviewResponse other) {
       if (other == com.github.fabriciolfj.proto.ProductReviewResponse.getDefaultInstance()) return this;
+      if (!other.getCode().isEmpty()) {
+        code_ = other.code_;
+        onChanged();
+      }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
         onChanged();
       }
-      if (!other.getEvaluation().isEmpty()) {
-        evaluation_ = other.evaluation_;
+      if (other.getRate() != 0) {
+        setRate(other.getRate());
+      }
+      if (!other.getDate().isEmpty()) {
+        date_ = other.date_;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -433,15 +517,25 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              message_ = input.readStringRequireUtf8();
+              code_ = input.readStringRequireUtf8();
 
               break;
             } // case 10
             case 18: {
-              evaluation_ = input.readStringRequireUtf8();
+              message_ = input.readStringRequireUtf8();
 
               break;
             } // case 18
+            case 24: {
+              rate_ = input.readInt32();
+
+              break;
+            } // case 24
+            case 34: {
+              date_ = input.readStringRequireUtf8();
+
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -458,9 +552,85 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object code_ = "";
+    /**
+     * <code>string code = 1;</code>
+     * @return The code.
+     */
+    public java.lang.String getCode() {
+      java.lang.Object ref = code_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        code_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string code = 1;</code>
+     * @return The bytes for code.
+     */
+    public com.google.protobuf.ByteString
+        getCodeBytes() {
+      java.lang.Object ref = code_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        code_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string code = 1;</code>
+     * @param value The code to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      code_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string code = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCode() {
+      
+      code_ = getDefaultInstance().getCode();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string code = 1;</code>
+     * @param value The bytes for code to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCodeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      code_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object message_ = "";
     /**
-     * <code>string message = 1;</code>
+     * <code>string message = 2;</code>
      * @return The message.
      */
     public java.lang.String getMessage() {
@@ -476,7 +646,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string message = 1;</code>
+     * <code>string message = 2;</code>
      * @return The bytes for message.
      */
     public com.google.protobuf.ByteString
@@ -493,7 +663,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string message = 1;</code>
+     * <code>string message = 2;</code>
      * @param value The message to set.
      * @return This builder for chaining.
      */
@@ -508,7 +678,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string message = 1;</code>
+     * <code>string message = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
@@ -518,7 +688,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string message = 1;</code>
+     * <code>string message = 2;</code>
      * @param value The bytes for message to set.
      * @return This builder for chaining.
      */
@@ -534,78 +704,109 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object evaluation_ = "";
+    private int rate_ ;
     /**
-     * <code>string evaluation = 2;</code>
-     * @return The evaluation.
+     * <code>int32 rate = 3;</code>
+     * @return The rate.
      */
-    public java.lang.String getEvaluation() {
-      java.lang.Object ref = evaluation_;
+    @java.lang.Override
+    public int getRate() {
+      return rate_;
+    }
+    /**
+     * <code>int32 rate = 3;</code>
+     * @param value The rate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRate(int value) {
+      
+      rate_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 rate = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRate() {
+      
+      rate_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object date_ = "";
+    /**
+     * <code>string date = 4;</code>
+     * @return The date.
+     */
+    public java.lang.String getDate() {
+      java.lang.Object ref = date_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        evaluation_ = s;
+        date_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string evaluation = 2;</code>
-     * @return The bytes for evaluation.
+     * <code>string date = 4;</code>
+     * @return The bytes for date.
      */
     public com.google.protobuf.ByteString
-        getEvaluationBytes() {
-      java.lang.Object ref = evaluation_;
+        getDateBytes() {
+      java.lang.Object ref = date_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        evaluation_ = b;
+        date_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string evaluation = 2;</code>
-     * @param value The evaluation to set.
+     * <code>string date = 4;</code>
+     * @param value The date to set.
      * @return This builder for chaining.
      */
-    public Builder setEvaluation(
+    public Builder setDate(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      evaluation_ = value;
+      date_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string evaluation = 2;</code>
+     * <code>string date = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearEvaluation() {
+    public Builder clearDate() {
       
-      evaluation_ = getDefaultInstance().getEvaluation();
+      date_ = getDefaultInstance().getDate();
       onChanged();
       return this;
     }
     /**
-     * <code>string evaluation = 2;</code>
-     * @param value The bytes for evaluation to set.
+     * <code>string date = 4;</code>
+     * @param value The bytes for date to set.
      * @return This builder for chaining.
      */
-    public Builder setEvaluationBytes(
+    public Builder setDateBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      evaluation_ = value;
+      date_ = value;
       onChanged();
       return this;
     }

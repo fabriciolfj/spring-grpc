@@ -1,15 +1,17 @@
-grp.server.port: 5000
+grpc:
+  server:
+    port: 5001
 
 spring:
   application:
     name: review-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5433/postgres
     password: root
     username: root
     hikari:
       maximum-pool-size: 40
-      connection-timeout: 200
+      connection-timeout: 300
   flyway:
     locations:
       - db/migration
@@ -24,6 +26,7 @@ spring:
 
 server:
   shutdown: graceful
+  port: 9091
   tomcat:
     connection-timeout: 2s
     keep-alive-timeout: 15s

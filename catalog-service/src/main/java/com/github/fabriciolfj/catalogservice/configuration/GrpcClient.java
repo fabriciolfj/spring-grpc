@@ -16,23 +16,27 @@ public class GrpcClient {
     @Value("${grpc.server.host:localhost}")
     private String host;
 
-    @Value("${grpc.server.port:9090}")
+    @Value("${grpc.server.port:5001}")
     private int port;
 
     private ManagedChannel channel;
-    private ProductReviewServiceGrpc.ProductReviewServiceBlockingStub productReviewServiceStub;
+    private ProductReviewServiceGrpc.ProductReviewServiceStub productReviewServiceStub;
 
     public void start() {
         channel = ManagedChannelBuilder.forAddress(host, port)
                 .usePlaintext()
                 .build();
 
-        productReviewServiceStub = ProductReviewServiceGrpc.newBlockingStub(channel);
+        productReviewServiceStub = ProductReviewServiceGrpc.newStub(channel);
         log.info("grpc client connected to {} {}", host, port);
     }
 
     public void shutdown() throws InterruptedException {
         channel.shutdown().awaitTermination(1, TimeUnit.MINUTES);
         log.info("grpc client disconnected sucessfully");
+    }
+
+    public ProductReviewServiceGrpc.ProductReviewServiceStub getSourceService() {
+        return this.productReviewServiceStub;
     }
 }
