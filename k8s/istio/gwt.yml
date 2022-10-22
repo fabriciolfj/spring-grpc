@@ -1,0 +1,46 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: review-gateway
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - "review.grpc.com"
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: review-virtualservice
+spec:
+  hosts:
+    - "review.grpc.com"
+  gateways:
+    - review-gateway
+  http:
+    - route:
+      - destination:
+          host: review-service
+          port:
+            number: 8080
+      retries:
+        attempts: 3
+        perTryTimeout: 6s
+      timeout: 1.5s
+      fault:
+        delay:
+          percentage:
+            value: 33
+          fixedDelay: 3s
+---
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: review-service-destination
+spec:
+  host: review-service
