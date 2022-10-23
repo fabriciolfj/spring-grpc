@@ -20,11 +20,11 @@ spec:
     spec:
       containers:
         - name: catalog-service
-          image: fabricio211/catalog-service
+          image: fabricio211/catalog-service:4
           imagePullPolicy: IfNotPresent
           env:
             - name: GRPC_SERVER
-              value: "5001"
+              value: "review-service.grpc.svc.cluster.local"
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:postgresql://postgrescatalog:5432/postgres"
             - name: SPRING_DATASOURCE_PASSWORD
@@ -45,13 +45,13 @@ spec:
             - containerPort: 8080
           livenessProbe:
             httpGet:
-              path: /actuator/health/liveness
+              path: /actuator/info
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
           readinessProbe:
             httpGet:
-              path: /actuator/health/readiness
+              path: /actuator/info
               port: 8080
             initialDelaySeconds: 5
             periodSeconds: 15
@@ -64,7 +64,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: review
+    app: catalog-service
   ports:
   - port: 8080
     protocol: TCP

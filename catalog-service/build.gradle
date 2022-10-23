@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.fabriciolfj'
-version = '0.0.1-SNAPSHOT'
+version = '4'
 sourceCompatibility = '17'
 
 configurations {
@@ -46,7 +46,7 @@ tasks.named('test') {
 
 
 bootBuildImage {
-	imageName = "fabricio211/${project.name}"
+	imageName = "fabricio211/${project.name}:${version}"
 	environment = ["BP_JVM_VERSION": "17.*"]
 
 	docker {

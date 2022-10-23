@@ -1,0 +1,46 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: catalog-gateway
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - "catalog.grpc.com"
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: catalog-virtualservice
+spec:
+  hosts:
+    - "catalog.grpc.com"
+  gateways:
+    - catalog-gateway
+  http:
+    - route:
+      - destination:
+          host: catalog-service
+          port:
+            number: 8080
+      retries:
+        attempts: 3
+        perTryTimeout: 6s
+      timeout: 1.5s
+      fault:
+        delay:
+          percentage:
+            value: 33
+          fixedDelay: 3s
+---
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: catalog-service-destination
+spec:
+  host: catalog-service

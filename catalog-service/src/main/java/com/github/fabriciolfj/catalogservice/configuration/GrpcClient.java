@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class GrpcClient {
 
-    @Value("${grpc.server.host:localhost}")
+    @Value("${grpc.server.host}")
     private String host;
 
     @Value("${grpc.server.port:5001}")

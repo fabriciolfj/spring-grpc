@@ -37,7 +37,7 @@ spec:
           image: postgres:latest
           imagePullPolicy: "IfNotPresent"
           ports:
-            - containerPort: 5433
+            - containerPort: 5432
           env:
             - name: POSTGRES_DB
               valueFrom:
@@ -64,6 +64,6 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 5433
+    - port: 5432
   selector:
     app: postgres
