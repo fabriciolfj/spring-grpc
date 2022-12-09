@@ -3,7 +3,6 @@ package com.github.fabriciolfj.catalogservice.provider.grpc;
 import com.github.fabriciolfj.catalogservice.business.usercase.SaveProduct;
 import com.github.fabriciolfj.catalogservice.configuration.GrpcClient;
 import com.github.fabriciolfj.proto.ProductReviewRequest;
-import com.github.fabriciolfj.proto.ProductReviewResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
